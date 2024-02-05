@@ -1,17 +1,17 @@
 import { NextResponse } from 'next/server'
  
-
- 
 export async  function GET() {
  return NextResponse.json({
     name:'saied'
   })
 }
 
-export async function POST(requst:Request)
+export async function POST(requst)
   {
        const data= await requst.json();
        return NextResponse.json(
-        {data,}
+        data
        )
   }
+
+  
