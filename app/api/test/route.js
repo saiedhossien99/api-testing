@@ -1,3 +1,4 @@
+import { headers } from 'next/headers';
 import { NextResponse } from 'next/server'
  
 export async  function GET() {
@@ -10,7 +11,10 @@ export async function POST(requst)
   {
        const data= await requst.json();
        return NextResponse.json(
-        data
+        data,{status:201,headers:{
+          "role":data.name,
+          "content-type":"api/json"
+        }}
        )
   }
 
